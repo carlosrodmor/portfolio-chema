@@ -1,25 +1,26 @@
 <template>
   <div class="home">
     <section class="hero">
-      <h1>Nombre del Escritor</h1>
-      <p class="hero-text">Autor de novelas contemporáneas y ensayos literarios</p>
-      <button class="cta-button">Ver Obras</button>
-    </section>
+      <div class="hero-content">
+        <div class="hero-text-left text-transition">
+          <h1>Jose María</h1>
+        </div>
 
-    <section class="features">
-      <div class="feature-card">
-        <h3>Novelas</h3>
-        <p>
-          Explora mis obras de ficción donde la realidad y la imaginación se entrelazan
-        </p>
+        <div class="hero-image">
+          <img src="@/assets/book.webp" alt="App mockup" class="book" />
+        </div>
+
+        <div class="hero-text-right text-transition">
+          <h1>Rodríguez</h1>
+          <h2>Fernández</h2>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>Ensayos</h3>
-        <p>Reflexiones sobre literatura, sociedad y el arte de escribir</p>
-      </div>
-      <div class="feature-card">
-        <h3>Blog</h3>
-        <p>Pensamientos, procesos creativos y actualizaciones sobre nuevos proyectos</p>
+
+      <div class="cta-container">
+        <button class="cta-button">
+          Get Early Access Now
+          <span class="plus-icon">+</span>
+        </button>
       </div>
     </section>
   </div>
@@ -32,64 +33,103 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  min-height: 100vh;
-  padding-top: 80px;
-  background-color: #000000;
-}
-
 .hero {
-  height: 80vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-}
-
-h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero-text {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.cta-button {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  background-color: #42b983;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #3aa876;
-}
-
-.features {
-  padding: 4rem 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  padding: 2rem;
   background-color: #000000;
 }
 
-.feature-card {
-  padding: 2rem;
-  background-color: #111111;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.feature-card h3 {
-  color: #42b983;
-  margin-bottom: 1rem;
+.hero-text-left,
+.hero-text-right {
+  text-align: left;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff;
+  transition: opacity 0.3s ease;
+}
+
+h2 {
+  font-size: 6rem;
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #ffffff;
+  transition: opacity 0.3s ease;
+}
+
+.hero-text-left:hover h1,
+.hero-text-left:hover h2,
+.hero-text-right:hover h1,
+.hero-text-right:hover h2 {
+  opacity: 0.7;
+}
+
+.emoji {
+  font-size: 5rem;
+}
+
+.phone-mockup {
+  height: 600px;
+  width: auto;
+  transform: perspective(1000px) rotateY(-15deg);
+}
+
+.cta-container {
+  margin-top: 3rem;
+}
+
+.cta-button {
+  background: linear-gradient(90deg, #ff4b2b 0%, #ff416c 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.plus-icon {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+  }
+
+  h1,
+  h2 {
+    font-size: 4rem;
+  }
+
+  .emoji {
+    font-size: 3.5rem;
+  }
+
+  .phone-mockup {
+    height: 400px;
+  }
 }
 </style>

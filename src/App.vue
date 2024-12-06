@@ -26,7 +26,6 @@ export default {
   min-height: 100vh;
 }
 
-/* Aseguramos que el fondo negro se aplique a todo el documento */
 body,
 html {
   margin: 0;
