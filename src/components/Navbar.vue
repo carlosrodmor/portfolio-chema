@@ -5,11 +5,20 @@
         <router-link to="/biografia" class="nav-link">Biografía</router-link>
         <router-link to="/obras" class="nav-link">Obras</router-link>
 
-        <div class="logo">
-          <router-link to="/">
-            <img src="@/assets/logo.png" alt="Logo" class="logo-image" />
-          </router-link>
-        </div>
+        <router-link to="/" class="home-icon">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+        </router-link>
 
         <router-link to="/blog" class="nav-link">Blog</router-link>
         <router-link to="/contacto" class="nav-link">Contacto</router-link>
@@ -42,15 +51,6 @@ export default {
   justify-content: center;
   align-items: center;
   position: relative;
-}
-
-.logo {
-  margin: 0 1.5rem;
-}
-
-.logo-image {
-  height: 2rem;
-  width: auto;
 }
 
 .nav-menu {
@@ -88,5 +88,16 @@ export default {
   .navbar {
     padding: 1rem;
   }
+}
+
+.home-icon {
+  color: #fff;
+  margin: 0 1.5rem;
+  padding: 0.5rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.home-icon:hover {
+  transform: scale(1.15);
 }
 </style>
