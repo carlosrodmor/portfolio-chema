@@ -5,16 +5,16 @@ const routes = [
     path: '/',
     name: 'Home',
     component: () => import('@/views/Home.vue')
+  },
+  {
+    path: '/biografia',
+    name: 'Biografia',
+    component: () => import('@/views/Biografia.vue')
   }
   //   {
   //     path: '/obras',
   //     name: 'Obras',
   //     component: () => import('@/views/Obras.vue')
-  //   },
-  //   {
-  //     path: '/sobre-mi',
-  //     name: 'SobreMi',
-  //     component: () => import('@/views/SobreMi.vue')
   //   },
   //   {
   //     path: '/blog',
