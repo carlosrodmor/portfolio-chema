@@ -1,6 +1,9 @@
 <template>
   <div class="cta-container">
-    <button class="cta-button" @click="navigateTo">Biografía</button>
+    <button class="cta-button" @click="navigateTo">
+      Descubrir
+      <span class="arrow">→</span>
+    </button>
   </div>
 </template>
 
@@ -25,29 +28,41 @@ export default {
 
 <style scoped>
 .cta-container {
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 .cta-button {
-  background: linear-gradient(90deg, #ff4b2b 0%, #ff416c 100%);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  font-size: 1.2rem;
+  background: transparent;
+  color: #fafafa;
+  border: 1px solid #fafafa;
+  padding: 0.8rem 2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.4s ease;
+  font-weight: 300;
+}
+
+.arrow {
+  font-size: 1.2rem;
+  transition: transform 0.4s ease;
 }
 
 .cta-button:hover {
-  background: linear-gradient(90deg, #ff416c 0%, #ff4b2b 100%);
-  transform: scale(1.05);
+  background-color: #fafafa;
+  color: #000000;
+  transform: translateY(-2px);
 }
 
-.plus-icon {
-  font-size: 1.5rem;
+.cta-button:hover .arrow {
+  transform: translateX(5px);
+}
+
+.cta-button:active {
+  transform: translateY(0);
 }
 </style>

@@ -2,16 +2,12 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text-left text-transition">
-        <h1>Jose María</h1>
-      </div>
-
-      <div class="hero-image">
-        <img src="@/assets/book.webp" alt="App mockup" class="book" />
+        <h1>José M.</h1>
       </div>
 
       <div class="hero-text-right text-transition">
         <h1>Rodríguez</h1>
-        <h2>Fernández</h2>
+        <h2>Escritor e Ingeniero</h2>
       </div>
     </div>
 
@@ -38,15 +34,14 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background-color: #000000;
 }
 
 .hero-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
-  max-width: 1200px;
+  gap: 2rem;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -56,39 +51,44 @@ export default {
 }
 
 h1 {
-  font-size: 6rem;
-  font-weight: bold;
+  font-size: 4.5rem;
+  font-weight: 300;
   margin: 0;
   color: #ffffff;
-  transition: opacity 0.3s ease;
+  letter-spacing: -0.02em;
+  transition: all 0.4s ease;
 }
 
 h2 {
-  font-size: 6rem;
-  font-weight: bold;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: #ffffff;
-  transition: opacity 0.3s ease;
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0.5rem 0 0 0;
+  color: #666;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
 }
 
 .hero-text-left:hover h1,
-.hero-text-left:hover h2,
 .hero-text-right:hover h1,
 .hero-text-right:hover h2 {
-  opacity: 0.7;
+  color: #000;
+  transform: translateX(10px);
 }
 
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 
-  h1,
+  h1 {
+    font-size: 3rem;
+  }
+
   h2 {
-    font-size: 4rem;
+    font-size: 1.5rem;
   }
 }
 </style>
