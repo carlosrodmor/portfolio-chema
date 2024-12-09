@@ -91,4 +91,35 @@ h2 {
     font-size: 1.5rem;
   }
 }
+
+.text-transition {
+  opacity: 0;
+  animation: slideInFromLeft 1.2s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.hero-text-right {
+  animation: slideInFromRight 1.2s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
 </style>

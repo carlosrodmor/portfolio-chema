@@ -1,6 +1,7 @@
 <template>
   <div class="quote fade-in">
-    "La ingeniería me enseñó a resolver problemas; la escritura, a entenderlos"
+    "Entre la niebla de la guerra, las historias de amor y sacrificio brillan con más
+    fuerza."
   </div>
 </template>
 
