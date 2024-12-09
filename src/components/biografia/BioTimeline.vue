@@ -22,28 +22,28 @@ export default {
     return {
       timelineEvents: [
         {
-          year: '2024',
-          title: 'El presente',
+          year: '2014',
+          title: 'Tiempos de neblina',
           description:
-            'Continúa escribiendo y compartiendo su experiencia a través de ensayos sobre tecnología y humanidades, mientras asesora proyectos de ingeniería.'
+            'Publicación de su obra más aclamada, una novela sobre la vida durante la Guerra Civil en el occidente asturiano.'
         },
         {
-          year: '1995',
-          title: 'Primera publicación',
+          year: '2000',
+          title: 'Director del 112 Madrid',
           description:
-            'Publica su primer libro "Entre Números y Letras", una reflexión sobre la intersección entre la ingeniería y la literatura.'
+            'Asume la dirección del Centro de Emergencias 112 de la Comunidad de Madrid.'
         },
         {
-          year: '1980',
-          title: 'Inicio profesional',
+          year: '1984',
+          title: 'Carrera dual',
           description:
-            'Comienza su carrera como ingeniero industrial, mientras dedica sus noches a escribir relatos cortos y ensayos técnicos.'
+            'Compagina su trabajo como ingeniero de telecomunicaciones con su pasión por la literatura asturiana.'
         },
         {
-          year: '1957',
+          year: '1956',
           title: 'Nacimiento',
           description:
-            'Nace en Madrid, en una familia donde la ingeniería y la literatura siempre estuvieron presentes.'
+            'Nace en Bimeda, Cangas del Narcea, iniciando un camino que combinaría tecnología y literatura.'
         }
       ]
     }

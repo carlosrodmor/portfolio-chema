@@ -15,10 +15,13 @@ export default {
   data() {
     return {
       skills: [
-        'Premio Nacional de Literatura Técnica (1998)',
-        'Autor de "Entre Números y Letras" (1995)',
-        'Colaborador en revistas especializadas',
-        'Conferenciante internacional'
+        'Ingeniero de Telecomunicaciones',
+        'Director del Centro de Emergencias 112 de Madrid',
+        'Autor de "Tiempos de nublina/Tiempos de neblina"',
+        'Narrador de la Guerra Civil en el occidente asturiano',
+        'Pionero en la literatura en dialecto occidental asturiano',
+        'Autor de "Nueite de filandón" (1982)',
+        "Miembro del Conceyu d'Asturies en Madrid"
       ]
     }
   }
@@ -80,18 +83,20 @@ export default {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: fadeIn 1.2s ease-out forwards;
 }
 
-@keyframes fadeInUp {
-  from {
+@keyframes fadeIn {
+  0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px) scale(0.98);
   }
-  to {
+  60% {
+    transform: translateY(-5px) scale(1.01);
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 

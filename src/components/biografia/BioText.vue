@@ -12,9 +12,9 @@ export default {
   data() {
     return {
       paragraphs: [
-        'Durante más de cuatro décadas, José María ha mantenido un delicado equilibrio entre su profesión como ingeniero y su pasión por la escritura. Su experiencia en ambos campos le ha permitido desarrollar una perspectiva única sobre la tecnología y su impacto en la sociedad.',
-        'Sus obras literarias, que incluyen cinco libros publicados y numerosos artículos técnicos, reflejan esta dualidad. En ellos, explora la intersección entre el pensamiento técnico y la expresión artística, demostrando cómo ambas disciplinas se complementan y enriquecen mutuamente.',
-        'Actualmente, dedica gran parte de su tiempo a mentorizar a jóvenes ingenieros y escritores, animándoles a explorar ambos mundos sin prejuicios.'
+        'Nacido en Bimeda, Cangas del Narcea, Xosé María Rodríguez ha desarrollado una destacada carrera dual como ingeniero de telecomunicaciones y escritor. Su trayectoria profesional alcanzó un punto destacado como Director del Centro de Emergencias 112 de Madrid, donde su experiencia técnica se puso al servicio de la seguridad ciudadana.',
+        'En el ámbito literario, su obra cumbre "Tiempos de nublina" (traducida al castellano como "Tiempos de neblina"), obtuvo un notable éxito. En esta novela, ambientada en el occidente asturiano durante la Guerra Civil española, el autor teje una narrativa conmovedora que entrelaza las vidas cotidianas de los habitantes de un pueblo.',
+        'Esta dualidad entre la precisión técnica de su trabajo como ingeniero y la sensibilidad artística de su obra literaria ha enriquecido ambas facetas de su vida, permitiéndole aportar una perspectiva única tanto a la gestión de emergencias como a la literatura asturiana.'
       ]
     }
   }
