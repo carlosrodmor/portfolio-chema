@@ -27,54 +27,82 @@ export default {
 
 <style scoped>
 .skills {
-  margin: 6rem 0;
-  padding: 3rem;
-  background-color: #111111;
+  margin: 4rem auto;
+  padding: 4rem;
+  background-color: rgba(17, 17, 17, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
 }
 
 .skills h3 {
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 2rem;
+  font-weight: 200;
   color: #ffffff;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.skills h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, #ffffff, transparent);
 }
 
 .skills ul {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .skills li {
-  color: #999;
+  color: #b3b3b3;
   font-size: 1.1rem;
-  padding: 0.5rem 0;
-  transition: color 0.3s ease;
+  padding: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
 .skills li:hover {
   color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .fade-in {
   opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes fadeIn {
+@keyframes fadeInUp {
   from {
     opacity: 0;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @media (max-width: 768px) {
   .skills {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem;
+    margin: 2rem auto;
+  }
+
+  .skills h3 {
+    font-size: 1.75rem;
   }
 }
 </style>
