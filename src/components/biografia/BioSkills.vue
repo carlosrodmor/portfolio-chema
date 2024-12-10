@@ -17,10 +17,10 @@ export default {
       skills: [
         'Ingeniero de Telecomunicaciones',
         'Director del Centro de Emergencias 112 de Madrid',
-        'Autor de "Tiempos de nublina/Tiempos de neblina"',
+        'Autor de Tiempos de nublina/Tiempos de neblina',
+        'Autor de Nueite de filandón',
         'Narrador de la Guerra Civil en el occidente asturiano',
         'Pionero en la literatura en dialecto occidental asturiano',
-        'Autor de "Nueite de filandón" (1982)',
         "Miembro del Conceyu d'Asturies en Madrid"
       ]
     }

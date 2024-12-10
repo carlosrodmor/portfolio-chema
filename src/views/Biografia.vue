@@ -1,6 +1,5 @@
 <template>
   <div class="biografia">
-    <BioHeader />
     <section class="bio-content">
       <BioTimeline />
       <BioQuote />
@@ -11,7 +10,6 @@
 </template>
 
 <script>
-import BioHeader from '@/components/biografia/BioHeader.vue'
 import BioTimeline from '@/components/biografia/BioTimeline.vue'
 import BioQuote from '@/components/biografia/BioQuote.vue'
 import BioText from '@/components/biografia/BioText.vue'
@@ -20,7 +18,6 @@ import BioSkills from '@/components/biografia/BioSkills.vue'
 export default {
   name: 'BiografiaComponent',
   components: {
-    BioHeader,
     BioTimeline,
     BioQuote,
     BioText,

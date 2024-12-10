@@ -28,7 +28,7 @@ export default {
             'Publicación de su obra más aclamada, una novela sobre la vida durante la Guerra Civil en el occidente asturiano.'
         },
         {
-          year: '2000',
+          year: '1998',
           title: 'Director del 112 Madrid',
           description:
             'Asume la dirección del Centro de Emergencias 112 de la Comunidad de Madrid.'
