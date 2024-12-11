@@ -1,5 +1,6 @@
 <template>
   <section class="hero">
+    <div class="background-image"></div>
     <div class="hero-content">
       <div class="hero-text-left text-transition">
         <h1>José M.</h1>
@@ -34,9 +35,28 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('@/assets/bill-gates.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  filter: grayscale(100%);
+  z-index: 1;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +92,7 @@ h2 {
 .hero-text-left:hover h1,
 .hero-text-right:hover h1,
 .hero-text-right:hover h2 {
-  color: #000;
+  opacity: 0;
   transform: translateX(10px);
 }
 
@@ -121,5 +141,11 @@ h2 {
     opacity: 1;
     transform: translateX(0) scale(1);
   }
+}
+
+/* Asegúrate de que CallToAction también esté por encima de la imagen */
+.hero > :last-child {
+  position: relative;
+  z-index: 2;
 }
 </style>
