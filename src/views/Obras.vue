@@ -3,25 +3,17 @@
     <section class="obras-content">
       <ObraDestacada />
       <ObrasList />
-      <NavigationButtons
-        prev="/biografia"
-        next="/blog"
-        prevText="Biografía"
-        nextText="Blog"
-      />
     </section>
   </div>
 </template>
 
 <script>
-import NavigationButtons from '@/components/common/NavigationButtons.vue'
 import ObraDestacada from '@/components/obras/ObraDestacada.vue'
 import ObrasList from '@/components/obras/ObrasList.vue'
 
 export default {
   name: 'ObrasView',
   components: {
-    NavigationButtons,
     ObraDestacada,
     ObrasList
   }
