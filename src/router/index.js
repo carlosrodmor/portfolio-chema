@@ -10,12 +10,12 @@ const routes = [
     path: '/biografia',
     name: 'Biografia',
     component: () => import('@/views/Biografia.vue')
+  },
+  {
+    path: '/obras',
+    name: 'Obras',
+    component: () => import('@/views/Obras.vue')
   }
-  //   {
-  //     path: '/obras',
-  //     name: 'Obras',
-  //     component: () => import('@/views/Obras.vue')
-  //   },
   //   {
   //     path: '/blog',
   //     name: 'Blog',
