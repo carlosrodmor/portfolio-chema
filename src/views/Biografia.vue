@@ -4,7 +4,6 @@
       <BioTimeline />
       <BioQuote />
       <BioText />
-      <NavigationButtons prev="/" next="/obras" prevText="Inicio" nextText="Obras" />
     </section>
   </div>
 </template>
@@ -13,15 +12,13 @@
 import BioTimeline from '@/components/biografia/BioTimeline.vue'
 import BioQuote from '@/components/biografia/BioQuote.vue'
 import BioText from '@/components/biografia/BioText.vue'
-import NavigationButtons from '@/components/common/NavigationButtons.vue'
 
 export default {
   name: 'BiografiaComponent',
   components: {
     BioTimeline,
     BioQuote,
-    BioText,
-    NavigationButtons
+    BioText
   }
 }
 </script>
