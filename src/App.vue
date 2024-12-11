@@ -1,15 +1,18 @@
 <template>
   <NavbarComponent />
   <router-view />
+  <ScrollToTop />
 </template>
 
 <script>
 import NavbarComponent from './components/Navbar.vue'
+import ScrollToTop from './components/common/ScrollToTop.vue'
 
 export default {
   name: 'App',
   components: {
-    NavbarComponent
+    NavbarComponent,
+    ScrollToTop
   }
 }
 </script>
