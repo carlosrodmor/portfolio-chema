@@ -7,9 +7,9 @@
 
       <div class="nav-menu" :class="{ 'nav-menu-active': isMenuOpen }">
         <div class="nav-links">
-          <router-link to="/biografia" class="nav-link" @click="closeMenu">Biografía</router-link>
-          <router-link to="/obras" class="nav-link" @click="closeMenu">Obras</router-link>
-          <router-link to="/" class="nav-link home-link" @click="closeMenu">
+          <router-link to="/biografia" class="nav-link">Biografía</router-link>
+          <router-link to="/obras" class="nav-link">Obras</router-link>
+          <router-link to="/" class="home-icon">
             <svg
               width="20"
               height="20"
@@ -23,8 +23,8 @@
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
             </svg>
           </router-link>
-          <router-link to="/blog" class="nav-link" @click="closeMenu">Blog</router-link>
-          <router-link to="/contacto" class="nav-link" @click="closeMenu">Contacto</router-link>
+          <router-link to="/blog" class="nav-link">Blog</router-link>
+          <router-link to="/contacto" class="nav-link">Contacto</router-link>
         </div>
       </div>
     </div>
@@ -53,6 +53,7 @@ export default {
 </script>
 
 <style scoped>
+/* Estilos base para escritorio */
 .navbar {
   position: fixed;
   top: 0;
@@ -86,6 +87,12 @@ export default {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .nav-link {
   color: #fff;
   text-decoration: none;
@@ -101,27 +108,28 @@ export default {
   opacity: 0.7;
 }
 
-/* Responsive design */
+.home-icon {
+  color: #fff;
+  margin: 0 1.5rem;
+  padding: 0.5rem;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.home-icon:hover {
+  transform: scale(1.15);
+}
+
+/* Ocultar botón de menú en escritorio */
+.menu-toggle {
+  display: none;
+}
+
+/* Estilos móviles */
 @media (max-width: 768px) {
   .navbar {
     padding: 0;
-  }
-
-  .menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-    z-index: 1001;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    transition: all 0.3s ease;
   }
 
   .nav-menu {
@@ -142,12 +150,7 @@ export default {
     z-index: 1000;
   }
 
-  .nav-menu-active {
-    transform: translateX(0);
-  }
-
   .nav-links {
-    display: flex;
     flex-direction: column;
     padding: 120px 40px;
     gap: 3rem;
@@ -155,9 +158,25 @@ export default {
     margin: 0 auto;
   }
 
-  .nav-link {
-    font-size: 1.2rem;
-    text-align: center;
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 1001;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu-active {
+    transform: translateX(0);
   }
 
   .nav-link {
@@ -190,6 +209,7 @@ export default {
     transform: translateX(5px) scale(1.1);
   }
 
+  /* Estilos del botón hamburguesa */
   .hamburger {
     position: relative;
     display: block;
@@ -210,7 +230,6 @@ export default {
     left: 0;
   }
 
-  /* Estado normal - tres líneas escalonadas */
   .hamburger::before {
     transform: translateY(-8px);
     width: 16px;
@@ -225,13 +244,11 @@ export default {
     left: auto;
   }
 
-  /* Estado hover - todas las líneas iguales */
   .menu-toggle:hover .hamburger::before,
   .menu-toggle:hover .hamburger::after {
     width: 26px;
   }
 
-  /* Estado activo - transformación a X */
   .nav-menu-active ~ .menu-toggle .hamburger {
     background: transparent;
   }
@@ -248,32 +265,8 @@ export default {
     left: 0;
   }
 
-  /* Animación adicional para el botón cuando está activo */
   .nav-menu-active ~ .menu-toggle {
     transform: rotate(90deg);
   }
-
-  /* Transición suave al volver al estado normal */
-  .menu-toggle:not(.nav-menu-active ~ .menu-toggle):not(.nav-menu-active + .menu-toggle) {
-    transform: rotate(0deg);
-  }
-
-  .menu-toggle:not(.nav-menu-active ~ .menu-toggle):not(.nav-menu-active + .menu-toggle) .hamburger::before,
-  .menu-toggle:not(.nav-menu-active ~ .menu-toggle):not(.nav-menu-active + .menu-toggle) .hamburger::after {
-    transition-delay: 0.1s;
-  }
-}
-
-.home-icon {
-  color: #fff;
-  margin: 0 1.5rem;
-  padding: 0.5rem;
-  transition: transform 0.5s ease-in-out;
-  display: flex;
-  align-items: center;
-}
-
-.home-icon:hover {
-  transform: scale(1.15);
 }
 </style>
