@@ -185,11 +185,9 @@ export default {
     top: 1.5rem;
     right: 1.5rem;
     z-index: 1001;
-    background: rgba(20, 20, 20, 0.5);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 6px;
     padding: 0.8rem;
+    border: none;
+    background: transparent;
   }
 
   .nav-menu-active {
