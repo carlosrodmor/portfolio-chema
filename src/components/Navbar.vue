@@ -7,9 +7,9 @@
 
       <div class="nav-menu" :class="{ 'nav-menu-active': isMenuOpen }">
         <div class="nav-links">
-          <router-link to="/biografia" class="nav-link">Biografía</router-link>
-          <router-link to="/obras" class="nav-link">Obras</router-link>
-          <router-link to="/" class="home-icon">
+          <router-link to="/biografia" class="nav-link" @click="closeMenu">Biografía</router-link>
+          <router-link to="/obras" class="nav-link" @click="closeMenu">Obras</router-link>
+          <router-link to="/" class="home-icon" @click="closeMenu">
             <svg
               width="20"
               height="20"
@@ -23,8 +23,8 @@
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
             </svg>
           </router-link>
-          <router-link to="/blog" class="nav-link">Blog</router-link>
-          <router-link to="/contacto" class="nav-link">Contacto</router-link>
+          <router-link to="/blog" class="nav-link" @click="closeMenu">Blog</router-link>
+          <router-link to="/contacto" class="nav-link" @click="closeMenu">Contacto</router-link>
         </div>
       </div>
     </div>
