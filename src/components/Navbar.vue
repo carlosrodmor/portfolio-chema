@@ -63,7 +63,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  padding: 1rem 2rem;
+  padding: 1.5rem;
   z-index: 1000;
   background: transparent;
 }
@@ -81,16 +81,15 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  padding: 0.5rem 1.5rem;
-  background: rgba(26, 26, 26, 0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 2.5rem;
+  padding: 0.75rem 2rem;
+  background: rgba(20, 20, 20, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   width: fit-content;
   margin: 0 auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links {
@@ -100,31 +99,44 @@ export default {
 }
 
 .nav-link {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  font-size: 0.85rem;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  height: 20px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  padding: 0.3rem 0;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 0.2s ease;
 }
 
 .nav-link:hover {
-  opacity: 0.7;
+  color: #fff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .home-icon {
-  color: #fff;
-  margin: 0 1.5rem;
-  padding: 0.5rem;
-  transition: transform 0.5s ease-in-out;
-  display: flex;
-  align-items: center;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.3rem;
+  transition: all 0.2s ease;
+  transform: scale(0.9);
 }
 
 .home-icon:hover {
-  transform: scale(1.15);
+  color: #fff;
+  transform: scale(1);
 }
 
 /* Ocultar botón de menú en escritorio */
@@ -144,9 +156,9 @@ export default {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(17, 17, 17, 0.75);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-radius: 0;
     margin: 0;
     padding: 0;
@@ -173,13 +185,11 @@ export default {
     top: 1.5rem;
     right: 1.5rem;
     z-index: 1001;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    transition: all 0.3s ease;
+    background: rgba(20, 20, 20, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 6px;
+    padding: 0.8rem;
   }
 
   .nav-menu-active {
@@ -187,7 +197,7 @@ export default {
   }
 
   .nav-link {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.7);
     opacity: 0.85;
     padding: 0.5rem 0;
@@ -221,7 +231,7 @@ export default {
     position: relative;
     display: block;
     width: 26px;
-    height: 1px;
+    height: 1.5px;
     background: rgba(255, 255, 255, 0.9);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -231,7 +241,7 @@ export default {
     content: '';
     position: absolute;
     width: 26px;
-    height: 1px;
+    height: 1.5px;
     background: rgba(255, 255, 255, 0.9);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     left: 0;
