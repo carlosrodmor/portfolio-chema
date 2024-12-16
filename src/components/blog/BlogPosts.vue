@@ -18,16 +18,28 @@ export default {
     return {
       posts: [
         {
-          title: 'La importancia de preservar el dialecto occidental',
-          excerpt: 'Reflexiones sobre la conservación de nuestra lengua y su importancia en la identidad cultural.',
-          date: 'Mayo 15, 2024',
+          title: 'El futuro de la literatura asturiana',
+          excerpt: 'Un análisis sobre las nuevas tendencias y voces emergentes en la literatura asturiana contemporánea.',
+          date: 'Marzo 15, 2025',
           tags: ['Literatura', 'Cultura']
         },
         {
-          title: 'Tecnología y tradición: un balance necesario',
-          excerpt: 'Cómo la modernidad puede convivir con nuestras raíces culturales.',
-          date: 'Abril 28, 2024',
-          tags: ['Tecnología', 'Sociedad']
+          title: 'La poesía en el occidente asturiano',
+          excerpt: 'Explorando las raíces y la evolución de la tradición poética en nuestra región.',
+          date: 'Febrero 28, 2025',
+          tags: ['Poesía', 'Tradición']
+        },
+        {
+          title: 'Memoria y narrativa: escribir sobre el pasado',
+          excerpt: 'Reflexiones sobre cómo la memoria colectiva influye en la creación literaria contemporánea.',
+          date: 'Enero 20, 2025',
+          tags: ['Escritura', 'Memoria']
+        },
+        {
+          title: 'Los dialectos asturianos en la era digital',
+          excerpt: 'Un vistazo a cómo las nuevas tecnologías pueden ayudar a preservar y difundir nuestras lenguas.',
+          date: 'Enero 5, 2025',
+          tags: ['Tecnología', 'Lengua']
         }
       ]
     }
