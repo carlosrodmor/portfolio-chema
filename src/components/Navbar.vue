@@ -7,7 +7,9 @@
 
       <div class="nav-menu" :class="{ 'nav-menu-active': isMenuOpen }">
         <div class="nav-links">
-          <router-link to="/biografia" class="nav-link" @click="closeMenu">Biografía</router-link>
+          <router-link to="/biografia" class="nav-link" @click="closeMenu"
+            >Biografía</router-link
+          >
           <router-link to="/obras" class="nav-link" @click="closeMenu">Obras</router-link>
           <router-link to="/" class="home-icon" @click="closeMenu">
             <svg
@@ -24,7 +26,9 @@
             </svg>
           </router-link>
           <router-link to="/blog" class="nav-link" @click="closeMenu">Blog</router-link>
-          <router-link to="/contacto" class="nav-link" @click="closeMenu">Contacto</router-link>
+          <router-link to="/contacto" class="nav-link" @click="closeMenu"
+            >Contacto</router-link
+          >
         </div>
       </div>
     </div>
@@ -79,12 +83,14 @@ export default {
   align-items: center;
   gap: 2rem;
   padding: 0.5rem 1.5rem;
-  background: #1a1a1a;
+  background: rgba(26, 26, 26, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   width: fit-content;
   margin: 0 auto;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links {
@@ -138,8 +144,9 @@ export default {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(17, 17, 17, 0.98);
+    background: rgba(17, 17, 17, 0.75);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 0;
     margin: 0;
     padding: 0;
