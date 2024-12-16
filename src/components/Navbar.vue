@@ -73,6 +73,9 @@ export default {
   font-size: 0.85rem;
   transition: opacity 0.3s ease;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  height: 20px;
 }
 
 .nav-link:hover {
@@ -95,6 +98,8 @@ export default {
   margin: 0 1.5rem;
   padding: 0.5rem;
   transition: transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
 }
 
 .home-icon:hover {

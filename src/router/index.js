@@ -15,17 +15,17 @@ const routes = [
     path: '/obras',
     name: 'Obras',
     component: () => import('@/views/Obras.vue')
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: () => import('@/views/Blog.vue')
+  },
+  {
+    path: '/contacto',
+    name: 'Contacto',
+    component: () => import('@/views/Contacto.vue')
   }
-  //   {
-  //     path: '/blog',
-  //     name: 'Blog',
-  //     component: () => import('@/views/Blog.vue')
-  //   },
-  //   {
-  //     path: '/contacto',
-  //     name: 'Contacto',
-  //     component: () => import('@/views/Contacto.vue')
-  //   }
 ]
 
 const router = createRouter({
