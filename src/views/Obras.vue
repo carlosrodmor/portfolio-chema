@@ -1,9 +1,11 @@
 <template>
   <div class="obras-container">
-    <section class="obras-content">
-      <ObraDestacada />
-      <ObrasList />
-    </section>
+    <div class="obras">
+      <section class="obras-content">
+        <ObraDestacada />
+        <ObrasList />
+      </section>
+    </div>
     <ScrollIndicator />
   </div>
 </template>
@@ -24,7 +26,7 @@ export default {
 </script>
 
 <style scoped>
-.obras {
+.obras-container {
   min-height: 100vh;
   background-color: #000000;
   padding: 4rem 2rem;
@@ -33,7 +35,7 @@ export default {
 }
 
 /* Imagen de fondo para Obras */
-.obras::after {
+.obras-container::after {
   content: '';
   position: absolute;
   top: 0;
@@ -50,7 +52,7 @@ export default {
   z-index: 0;
 }
 
-.obras:hover::after {
+.obras-container:hover::after {
   transform: scale(1);
   opacity: 0.12;
 }
@@ -63,7 +65,7 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .obras {
+  .obras-container {
     padding: 2rem 1rem;
   }
 }
