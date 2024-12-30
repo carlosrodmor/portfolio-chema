@@ -45,13 +45,19 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('@/assets/bill-gates.webp');
+  background-image: url('https://images.unsplash.com/photo-1526243741027-444d633d7365?q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.15;
-  filter: grayscale(100%);
-  z-index: 1;
+  opacity: 0.08;
+  filter: grayscale(100%) contrast(120%);
+  transform: scale(1.1);
+  transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero:hover .background-image {
+  transform: scale(1);
+  opacity: 0.12;
 }
 
 .hero-content {
@@ -71,29 +77,35 @@ export default {
 }
 
 h1 {
-  font-size: 4.5rem;
-  font-weight: 300;
+  font-size: 5rem;
+  font-weight: 200;
   margin: 0;
-  color: #ffffff;
-  letter-spacing: -0.02em;
-  transition: all 0.4s ease;
+  background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -2px;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
-  margin: 0.5rem 0 0 0;
-  color: #666;
-  letter-spacing: 0.05em;
+  margin: 1rem 0;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 4px;
   text-transform: uppercase;
-  transition: all 0.4s ease;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-text-left:hover h1,
-.hero-text-right:hover h1,
+.hero-text-right:hover h1 {
+  transform: translateX(-10px);
+  opacity: 0.7;
+}
+
 .hero-text-right:hover h2 {
-  opacity: 0;
-  transform: translateX(10px);
+  letter-spacing: 8px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 768px) {
@@ -147,5 +159,30 @@ h2 {
 .hero > :last-child {
   position: relative;
   z-index: 2;
+}
+
+/* Efecto de partículas flotantes */
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 1%
+  );
+  background-size: 3px 3px;
+  animation: particleFloat 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes particleFloat {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
 }
 </style>
