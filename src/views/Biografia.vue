@@ -1,10 +1,13 @@
 <template>
-  <div class="biografia">
-    <section class="bio-content">
-      <BioTimeline />
-      <BioQuote />
-      <BioText />
-    </section>
+  <div class="biografia-container">
+    <div class="biografia">
+      <section class="bio-content">
+        <BioTimeline />
+        <BioQuote />
+        <BioText />
+      </section>
+    </div>
+    <ScrollIndicator />
   </div>
 </template>
 
@@ -12,13 +15,15 @@
 import BioTimeline from '@/components/biografia/BioTimeline.vue'
 import BioQuote from '@/components/biografia/BioQuote.vue'
 import BioText from '@/components/biografia/BioText.vue'
+import ScrollIndicator from '@/components/ScrollIndicator.vue'
 
 export default {
-  name: 'BiografiaComponent',
+  name: 'BiografiaView',
   components: {
     BioTimeline,
     BioQuote,
-    BioText
+    BioText,
+    ScrollIndicator
   }
 }
 </script>

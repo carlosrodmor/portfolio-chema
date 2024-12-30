@@ -41,8 +41,15 @@ export default {
   data() {
     return {
       isMenuOpen: false,
-      isTransitioning: false
+      isTransitioning: false,
+      scrollProgress: 0
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     toggleMenu() {
@@ -65,6 +72,12 @@ export default {
         document.body.style.overflow = ''
         this.isTransitioning = false
       }, 400)
+    },
+    handleScroll() {
+      const windowHeight =
+        document.documentElement.scrollHeight - document.documentElement.clientHeight
+      const scrolled = window.scrollY
+      this.scrollProgress = (scrolled / windowHeight) * 100
     }
   },
   beforeUnmount() {
