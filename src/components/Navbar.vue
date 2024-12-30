@@ -40,18 +40,35 @@ export default {
   name: 'NavbarComponent',
   data() {
     return {
-      isMenuOpen: false
+      isMenuOpen: false,
+      isTransitioning: false
     }
   },
   methods: {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen
-      document.body.style.overflow = this.isMenuOpen ? 'hidden' : ''
+      if (this.isMenuOpen) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        this.handleMenuClose()
+      }
     },
     closeMenu() {
-      this.isMenuOpen = false
-      document.body.style.overflow = ''
+      if (this.isMenuOpen && !this.isTransitioning) {
+        this.isTransitioning = true
+        this.isMenuOpen = false
+        this.handleMenuClose()
+      }
+    },
+    handleMenuClose() {
+      setTimeout(() => {
+        document.body.style.overflow = ''
+        this.isTransitioning = false
+      }, 400)
     }
+  },
+  beforeUnmount() {
+    document.body.style.overflow = ''
   }
 }
 </script>
@@ -178,7 +195,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(18, 18, 18, 0.95);
+    background: rgba(18, 18, 18, 0.98);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 0;
@@ -186,17 +203,54 @@ export default {
     padding: 0;
     transform: translateX(-100%);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .nav-menu-active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .nav-links {
     flex-direction: column;
-    padding: 120px 40px;
-    gap: 3rem;
-    max-width: 280px;
-    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 2.5rem;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu-active .nav-links {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-icon {
+    transform: scale(1.5);
+    margin: 1rem 0;
+  }
+
+  .home-icon:hover {
+    transform: scale(1.7);
   }
 
   .menu-toggle {
@@ -210,40 +264,7 @@ export default {
     padding: 0.8rem;
     border: none;
     background: transparent;
-  }
-
-  .nav-menu-active {
-    transform: translateX(0);
-  }
-
-  .nav-link {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    opacity: 0.85;
-    padding: 0.5rem 0;
-    text-align: left;
-    height: auto;
-    letter-spacing: 0.5px;
-    font-weight: 300;
-    transition: all 0.3s ease;
-  }
-
-  .nav-link:hover {
-    opacity: 1;
-    color: #fff;
-    transform: translateX(5px);
-  }
-
-  .home-link {
-    display: flex;
-    align-items: center;
-    margin: 1.5rem 0;
-    opacity: 0.6;
-  }
-
-  .home-link:hover {
-    opacity: 1;
-    transform: translateX(5px) scale(1.1);
+    cursor: pointer;
   }
 
   /* Estilos del botón hamburguesa */
@@ -281,6 +302,7 @@ export default {
     left: auto;
   }
 
+  /* Animación del botón hamburguesa */
   .menu-toggle:hover .hamburger::before,
   .menu-toggle:hover .hamburger::after {
     width: 26px;
