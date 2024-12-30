@@ -57,7 +57,6 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos base para escritorio */
 .navbar {
   position: fixed;
   top: 0;
@@ -78,18 +77,19 @@ export default {
 }
 
 .nav-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5rem;
+  background: rgba(10, 10, 10, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 100px;
   padding: 0.75rem 2rem;
-  background: rgba(20, 20, 20, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  width: fit-content;
-  margin: 0 auto;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-menu:hover {
+  background: rgba(10, 10, 10, 0.5);
+  transform: translateY(5px);
 }
 
 .nav-links {
@@ -99,32 +99,37 @@ export default {
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.85);
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.9rem;
-  font-weight: 400;
-  transition: all 0.2s ease;
-  padding: 0.3rem 0;
-  position: relative;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  transition: all 0.4s ease;
+  transform-origin: left;
 }
 
-.nav-link::after {
+.nav-link::before {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 1px;
   background: #fff;
-  transition: width 0.2s ease;
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
 }
 
 .nav-link:hover {
   color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
 }
 
-.nav-link:hover::after {
-  width: 100%;
+.nav-link:hover::before {
+  width: 80%;
 }
 
 .home-icon {
@@ -132,11 +137,28 @@ export default {
   padding: 0.3rem;
   transition: all 0.2s ease;
   transform: scale(0.9);
+  position: relative;
 }
 
 .home-icon:hover {
   color: #fff;
   transform: scale(1);
+}
+
+.home-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.home-icon:hover::after {
+  opacity: 1;
 }
 
 /* Ocultar botón de menú en escritorio */
@@ -283,5 +305,28 @@ export default {
   .nav-menu-active ~ .menu-toggle {
     transform: rotate(90deg);
   }
+}
+
+/* Efecto de brillo en el menú */
+.nav-menu::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  z-index: -1;
+  transition: transform 0.6s ease;
+  transform: translateX(-100%);
+}
+
+.nav-menu:hover::before {
+  transform: translateX(100%);
 }
 </style>

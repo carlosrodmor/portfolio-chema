@@ -8,7 +8,14 @@
 
       <div class="location-container">
         <div class="location-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
@@ -38,15 +45,38 @@ export default {
   min-height: 100vh;
   background-color: #000000;
   padding: 4rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Imagen de fondo para Contacto */
+.contacto::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1516414447565-b14be0adf13e?q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+  filter: grayscale(100%) contrast(120%);
+  transform: scale(1.1);
+  transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.contacto:hover::after {
+  transform: scale(1);
+  opacity: 0.12;
 }
 
 .contacto-content {
   max-width: 800px;
-  width: 100%;
-  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .name-container {
@@ -70,7 +100,7 @@ export default {
 
 .name-effect:hover {
   transform: translateY(-5px);
-  text-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .name-asturian {
@@ -185,4 +215,4 @@ export default {
     font-size: 1rem;
   }
 }
-</style> 
+</style>
