@@ -57,7 +57,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://images.unsplash.com/photo-1516414447565-b14be0adf13e?q=80');
+  background-image: url('https://images.unsplash.com/photo-1506784365847-bbad939e9335?q=80');
   background-size: cover;
   background-position: center;
   opacity: 0.08;
