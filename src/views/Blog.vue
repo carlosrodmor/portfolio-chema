@@ -1,21 +1,26 @@
 <template>
-  <div class="blog">
-    <section class="blog-content">
-      <BlogHeader />
-      <BlogPosts />
-    </section>
+  <div class="blog-container">
+    <div class="blog">
+      <section class="blog-content">
+        <BlogHeader />
+        <BlogPosts />
+      </section>
+    </div>
+    <ScrollIndicator />
   </div>
 </template>
 
 <script>
 import BlogHeader from '@/components/blog/BlogHeader.vue'
 import BlogPosts from '@/components/blog/BlogPosts.vue'
+import ScrollIndicator from '@/components/ScrollIndicator.vue'
 
 export default {
   name: 'BlogView',
   components: {
     BlogHeader,
-    BlogPosts
+    BlogPosts,
+    ScrollIndicator
   }
 }
 </script>

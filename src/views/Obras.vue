@@ -1,21 +1,24 @@
 <template>
-  <div class="obras">
+  <div class="obras-container">
     <section class="obras-content">
       <ObraDestacada />
       <ObrasList />
     </section>
+    <ScrollIndicator />
   </div>
 </template>
 
 <script>
 import ObraDestacada from '@/components/obras/ObraDestacada.vue'
 import ObrasList from '@/components/obras/ObrasList.vue'
+import ScrollIndicator from '@/components/ScrollIndicator.vue'
 
 export default {
   name: 'ObrasView',
   components: {
     ObraDestacada,
-    ObrasList
+    ObrasList,
+    ScrollIndicator
   }
 }
 </script>

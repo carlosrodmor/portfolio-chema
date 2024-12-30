@@ -1,47 +1,55 @@
 <template>
-  <div class="contacto">
-    <section class="contacto-content">
-      <div class="name-container">
-        <h1 class="name-effect">José María Rodríguez</h1>
-        <h2 class="name-asturian">Xosé María Rodríguez</h2>
-      </div>
-
-      <div class="location-container">
-        <div class="location-icon">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
+  <div class="contacto-container">
+    <div class="contacto">
+      <section class="contacto-content">
+        <div class="name-container">
+          <h1 class="name-effect">José María Rodríguez</h1>
+          <h2 class="name-asturian">Xosé María Rodríguez</h2>
         </div>
-        <p class="location-text">Torrelodones, Madrid</p>
-      </div>
 
-      <div class="email-container">
-        <p class="email-intro">¿Tienes algo que compartir?</p>
-        <a href="mailto:chemabimeda3@gmail.com" class="email-link">
-          <span class="email-text">chemabimeda3@gmail.com</span>
-          <span class="email-arrow">→</span>
-        </a>
-      </div>
-    </section>
+        <div class="location-container">
+          <div class="location-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <p class="location-text">Torrelodones, Madrid</p>
+        </div>
+
+        <div class="email-container">
+          <p class="email-intro">¿Tienes algo que compartir?</p>
+          <a href="mailto:chemabimeda3@gmail.com" class="email-link">
+            <span class="email-text">chemabimeda3@gmail.com</span>
+            <span class="email-arrow">→</span>
+          </a>
+        </div>
+      </section>
+    </div>
+    <ScrollIndicator />
   </div>
 </template>
 
 <script>
+import ScrollIndicator from '@/components/ScrollIndicator.vue'
+
 export default {
-  name: 'ContactoView'
+  name: 'ContactoView',
+  components: {
+    ScrollIndicator
+  }
 }
 </script>
 
 <style scoped>
-.contacto {
+.contacto-container {
   min-height: 100vh;
   background-color: #000000;
   padding: 4rem 2rem;
@@ -50,7 +58,7 @@ export default {
 }
 
 /* Imagen de fondo para Contacto */
-.contacto::after {
+.contacto-container::after {
   content: '';
   position: absolute;
   top: 0;
@@ -67,7 +75,7 @@ export default {
   z-index: 0;
 }
 
-.contacto:hover::after {
+.contacto-container:hover::after {
   transform: scale(1);
   opacity: 0.12;
 }
